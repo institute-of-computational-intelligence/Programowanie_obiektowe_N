@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Student" package="po_n_lab2" visibility="public" xPosition="-11.0" yPosition="295.0">
+      <Fields>
+        <Field name="year" type="int" visibility="private"/>
+        <Field name="group" type="int" visibility="private"/>
+        <Field name="indexId" type="int" visibility="private"/>
+        <Field name="grades" type="List&lt;Grade&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Date" name="dateOfBirth"/>
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="group"/>
+          <Argument type="int" name="indexId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getYear" returnType="int" visibility="public"/>
+        <Method name="setYear" returnType="void" visibility="public">
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="getGroup" returnType="int" visibility="public"/>
+        <Method name="setGroup" returnType="void" visibility="public">
+          <Argument type="int" name="group"/>
+        </Method>
+        <Method name="getIndexId" returnType="int" visibility="public"/>
+        <Method name="setIndexId" returnType="void" visibility="public">
+          <Argument type="int" name="indexId"/>
+        </Method>
+        <Method name="getGrades" returnType="List&lt;Grade&gt;" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="details" returnType="void" visibility="public"/>
+        <Method name="addGrade" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+          <Argument type="double" name="value"/>
+          <Argument type="Date" name="date"/>
+        </Method>
+        <Method name="addGrade" returnType="void" visibility="public">
+          <Argument type="Grade" name="grade"/>
+        </Method>
+        <Method name="displayGrades" returnType="void" visibility="public"/>
+        <Method name="displayGrades" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+        </Method>
+        <Method name="deleteGrade" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+          <Argument type="double" name="value"/>
+          <Argument type="Date" name="date"/>
+        </Method>
+        <Method name="deleteGrade" returnType="void" visibility="public">
+          <Argument type="Grade" name="grade"/>
+        </Method>
+        <Method name="deleteGrades" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+        </Method>
+        <Method name="deleteGrades" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FootballPlayer" package="po_n_lab2" visibility="public" xPosition="686.0" yPosition="815.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Date" name="dateOfBirth"/>
+          <Argument type="String" name="position"/>
+          <Argument type="String" name="club"/>
+          <Argument type="int" name="scoredGoals"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ScoreGoal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="po_n_lab2" visibility="public" xPosition="842.0" yPosition="395.0">
+      <Fields>
+        <Field name="position" type="String" visibility="private"/>
+        <Field name="club" type="String" visibility="private"/>
+        <Field name="scoredGoals" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Date" name="dateOfBirth"/>
+          <Argument type="String" name="position"/>
+          <Argument type="String" name="club"/>
+          <Argument type="int" name="scoredGoals"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPosition" returnType="String" visibility="public"/>
+        <Method name="setPosition" returnType="void" visibility="public">
+          <Argument type="String" name="position"/>
+        </Method>
+        <Method name="getClub" returnType="String" visibility="public"/>
+        <Method name="setClub" returnType="void" visibility="public">
+          <Argument type="String" name="club"/>
+        </Method>
+        <Method name="getScoredGoals" returnType="int" visibility="public"/>
+        <Method name="setScoredGoals" returnType="void" visibility="public">
+          <Argument type="int" name="scoredGoals"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="details" returnType="void" visibility="public"/>
+        <Method name="ScoreGoal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Grade" package="po_n_lab2" visibility="public" xPosition="91.0" yPosition="916.0">
+      <Fields>
+        <Field name="subjectName" type="String" visibility="private"/>
+        <Field name="date" type="Date" visibility="private"/>
+        <Field name="value" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="subjectName"/>
+          <Argument type="double" name="value"/>
+          <Argument type="Date" name="date"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSubjectName" returnType="String" visibility="public"/>
+        <Method name="setSubjectName" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+        </Method>
+        <Method name="getDate" returnType="Date" visibility="public"/>
+        <Method name="setDate" returnType="void" visibility="public">
+          <Argument type="Date" name="date"/>
+        </Method>
+        <Method name="getValue" returnType="double" visibility="public"/>
+        <Method name="setValue" returnType="void" visibility="public">
+          <Argument type="double" name="value"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="details" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Person" package="po_n_lab2" visibility="public" xPosition="559.0" yPosition="15.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="protected"/>
+        <Field name="lastName" type="String" visibility="protected"/>
+        <Field name="dateOfBirth" type="Date" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Date" name="dateOfBirth"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="setFirstName" returnType="void" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="setLastName" returnType="void" visibility="public">
+          <Argument type="String" name="lastName"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="details" returnType="void" visibility="public"/>
+        <Method name="getDateOfBirth" returnType="Date" visibility="public"/>
+        <Method name="setDateOfBirth" returnType="void" visibility="public">
+          <Argument type="Date" name="dateOfBirth"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HandballPlayer" package="po_n_lab2" visibility="public" xPosition="1397.0" yPosition="815.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Date" name="dateOfBirth"/>
+          <Argument type="String" name="position"/>
+          <Argument type="String" name="club"/>
+          <Argument type="int" name="scoredGoals"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ScoreGoal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="po_n_lab2.Student" target="po_n_lab2.Person"/>
+    <IsRelation name="is" source="po_n_lab2.HandballPlayer" target="po_n_lab2.Player"/>
+    <UseRelation source="po_n_lab2.Student" target="po_n_lab2.Grade" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="po_n_lab2.FootballPlayer" target="po_n_lab2.Player"/>
+    <IsRelation name="is" source="po_n_lab2.Player" target="po_n_lab2.Person"/>
+    <HasRelation name="grades" source="po_n_lab2.Student" target="po_n_lab2.Grade" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Grade&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
