@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 public class Lab2 {
 
-    public static void main(String[] args) throws ParseException{
+    public static void main(String[] args) throws ParseException, CloneNotSupportedException{
  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
  Person person1 = new Person("Adam", "Miś", sdf.parse("21/12/1990"));
  Person person2 = new Student("Michał", "Kot", sdf.parse("15/01/1970"), 3, 5, 12345);

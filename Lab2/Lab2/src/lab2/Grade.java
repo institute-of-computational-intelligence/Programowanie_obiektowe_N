@@ -2,7 +2,7 @@ package lab2;
 
 import java.util.Date;
 
-public class Grade {
+public class Grade implements Cloneable {
     private String subjectName;
     private Date date;
     private double value;
@@ -46,6 +46,11 @@ public class Grade {
     
     public void details(){
         System.out.println(this);
+    }
+
+    @Override
+    protected Grade clone() throws CloneNotSupportedException {
+        return new Grade(this.subjectName, this.value, this.date);
     }
     
     

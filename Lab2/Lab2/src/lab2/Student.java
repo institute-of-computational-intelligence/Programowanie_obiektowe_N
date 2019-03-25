@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.stream.Collectors.*;
 import static java.util.stream.Collectors.toList;
 
+// TODO:
+// addGrade - datetime.NOW
+// removeGrade - null Check
+// details() - reformat
+
 public class Student extends Person {
     private int year;
     private int group;
@@ -54,20 +59,21 @@ public class Student extends Person {
     public void details(){
         System.out.println(this);
     }
-    
-    // To może nie działać ;)
+
     @Override
     public String toString() {
-        return "Student{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
+        return "Student " + super.firstName + " " + super.lastName + " " + super.dateOfBirth + "{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
     }
+
     
-    public void addGrade(String subjectName, double value, Date date){
+
+    public void addGrade(String subjectName, double value, Date date) throws CloneNotSupportedException{
         Grade grade = new Grade(subjectName, value, date);
-        grades.add(grade);
+        grades.add(grade.clone());
     }
     
-    public void addGrade(Grade grade){
-        grades.add(grade);
+    public void addGrade(Grade grade) throws CloneNotSupportedException{
+        grades.add(grade.clone());
     }
     
     public void displayGrade(){
@@ -98,7 +104,7 @@ public class Student extends Person {
     public void deleteGrade(Grade grade){
         List<Grade> filteredGrades = grades.stream()
                 .filter(t -> 
-                        t.getSubjectName() == grade.getSubjectName()
+                        (t.getSubjectName() == null ? grade.getSubjectName() == null : t.getSubjectName().equals(grade.getSubjectName()))
                         && t.getValue() == grade.getValue() 
                         && t.getDate() == grade.getDate())
                 .collect(toList());
@@ -111,9 +117,9 @@ public class Student extends Person {
  
     public void deleteGrades(String subjectName){
         List<Grade> gradesToRemove = grades.stream()
-                .filter(t -> t.getSubjectName() == subjectName)
+                .filter(t -> (t.getSubjectName() == null ? subjectName == null : t.getSubjectName().equals(subjectName)))
                 .collect(toList());
-        for(Grade grade: grades)
+        for(Grade grade: gradesToRemove)
         {
             grades.remove(grade);
         }
