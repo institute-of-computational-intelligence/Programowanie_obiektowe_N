@@ -61,7 +61,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student: " + super.firstName + " " + super.lastName + " " + super.dateOfBirth.getYear()+"."+super.dateOfBirth.getMonth()+"."+super.dateOfBirth.getDay()
+        return "[Student]: " + super.firstName + " " + super.lastName + " " + super.dateOfBirth.getYear()+"."+super.dateOfBirth.getMonth()+"."+super.dateOfBirth.getDay()
                 +"{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
     }
 
