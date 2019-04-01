@@ -41,7 +41,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + '}';
+        return "Person: " + firstName + " " + lastName + " " + dateOfBirth;
     }
     
     public void details(){

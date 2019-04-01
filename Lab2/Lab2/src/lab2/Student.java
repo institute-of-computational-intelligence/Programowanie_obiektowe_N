@@ -3,7 +3,6 @@ package lab2;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors.*;
 import static java.util.stream.Collectors.toList;
 
 // TODO:
@@ -20,12 +19,11 @@ public class Student extends Person {
     public Student() { grades = new ArrayList<Grade>(); }
 
     public Student(String firstName, String lastName, Date dateOfBirth, int year, int group, int indexid) {
-        
         super(firstName, lastName, dateOfBirth);
         this.year = year;
         this.group = group;
         this.indexid = indexid;       
-        this.grades = new ArrayList<Grade>();
+        this.grades = new ArrayList<Grade>(); // The same as this.grades = new ArrayList<>();
     }
 
     public int getYear() {
@@ -56,13 +54,15 @@ public class Student extends Person {
         return grades;
     }
 
+    @Override
     public void details(){
         System.out.println(this);
     }
 
     @Override
     public String toString() {
-        return "Student " + super.firstName + " " + super.lastName + " " + super.dateOfBirth + "{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
+        return "Student: " + super.firstName + " " + super.lastName + " " + super.dateOfBirth.getYear()+"."+super.dateOfBirth.getMonth()+"."+super.dateOfBirth.getDay()
+                +"{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
     }
 
     
@@ -77,14 +77,15 @@ public class Student extends Person {
     }
     
     public void displayGrade(){
-        for(Grade grade: grades){
+        // Fun with lambda foreach
+        grades.stream().forEach((grade) -> {
             grade.details();
-        }
+        });
     }
     
     public void displayGrades(String subjectName){
         for(Grade grade: grades){
-            if(grade.getSubjectName() == subjectName){
+            if(grade.getSubjectName() == null ? subjectName == null : grade.getSubjectName().equals(subjectName)){
                 grade.details();
             }
         }
@@ -93,7 +94,7 @@ public class Student extends Person {
     public void deleteGrade(String subjectName, double value, Date date){
         for(Grade grade: grades)
         {
-            if(grade.getSubjectName() == subjectName && 
+            if((grade.getSubjectName() == null ? subjectName == null : grade.getSubjectName().equals(subjectName)) && 
                     grade.getValue() == value && 
                     grade.getDate() == date){
                 grades.remove(grade);
