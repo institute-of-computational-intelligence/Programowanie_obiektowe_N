@@ -2,6 +2,9 @@
 package laboratoria_2;
 
 import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
 
 
 
@@ -44,10 +47,11 @@ public class Person {
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
+    SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+    
     @Override
     public String toString() {
-        return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + '}';
+        return "Person{" + "First name: " + firstName + ", Last name: " + lastName + ", Date of birth: " + dateOfBirth + '}';
     }
 
     public void details(){

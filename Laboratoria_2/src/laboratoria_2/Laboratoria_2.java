@@ -34,14 +34,15 @@ public class Laboratoria_2 {
          student.addGrade(grade);
          student.addGrade("AWWW", 5.0D, sdf.parse("11/04/2013"));
          student.addGrade("AWWW", 4.5D, sdf.parse("05/07/2009"));
+         student.addGrade("BWWW",4.5D,sdf.parse("07/10/2011"));
          student.details();
-         //student.deleteGrade("AWWW", 4.5D, sdf.parse("07/10/2011"));
-         //student.details();
-         //student.deleteGrades("AWWW");
-         //student.details();
-         //student.addGrade("AWWW", 5.0D, sdf.parse("18/01/2017"));
-         //student.deleteGrades();
-         //student.details(); 
+         student.deleteGrade("BWWW", 4.5D, sdf.parse("07/10/2011"));
+         student.details();
+         student.deleteGrades("AWWW");
+         student.details();
+         student.addGrade("AWWW", 5.0D, sdf.parse("18/01/2017"));
+         student.deleteGrades();
+         student.details(); 
     }
     
 }

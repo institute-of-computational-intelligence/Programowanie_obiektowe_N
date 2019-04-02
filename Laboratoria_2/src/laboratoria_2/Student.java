@@ -5,6 +5,9 @@ import java.util.Date;
 import java.text.SimpleDateFormat; 
 import java.util.ArrayList;
 import java.util.List;
+import static java.util.Locale.filter;
+import java.util.NoSuchElementException;
+import static java.util.stream.Collectors.toList;
 
 
 public class Student extends Person {
@@ -57,6 +60,10 @@ public class Student extends Person {
         return "Student{" + "year=" + year + ", group=" + group + ", indexId=" + indexId + ", grades=" + grades + '}';
     }
     
+    
+    
+    
+    
     @Override
     public void details(){
         System.out.println(toString());
@@ -79,4 +86,62 @@ public class Student extends Person {
         });
     }
     
+   // public void displayGrades(String subjectName){
+    //    grades.forEach((nowyGrad(subjectName)) -> {
+      //      nowyGrad.
+        //});
+    //}
+    
+    public void deleteGrade(String subjectName, double value, Date date){
+        for(Grade grade: grades)
+        {
+            if((grade.getSubjectName() == null ? subjectName == null : grade.getSubjectName().equals(subjectName)) && 
+                    grade.getValue() == value && 
+                    grade.getDate() == date){
+                grades.remove(grade);
+            }
+        }
+    }
+    
+    
+            
+        
+        //grades.remove(usunGrada);
+        
+    
+    
+    public void deleteGrade(Grade grade){
+        
+        
+        for(Grade gradzik: grades){
+            if(gradzik.getSubjectName()==grade.getSubjectName()&&gradzik.getValue()==grade.getValue()&&gradzik.getDate()==grade.getDate()){
+                grades.remove(gradzik);
+            }
+        }
+        
+        
+        
+    }
+    
+    public void deleteGrades(String subjectName){
+        
+       List<Grade> gradesToRemove = grades.stream()
+                .filter(gr -> (gr.getSubjectName() == null ? subjectName == null : gr.getSubjectName().equals(subjectName)))
+                .collect(toList());
+        for(Grade grade: gradesToRemove)
+        {
+            grades.remove(grade);
+        }
+    }      
+                
+        
+       
+        
+        
+       
+  
+    
+    public void deleteGrades(){
+        grades = new ArrayList();
+    }
 }
