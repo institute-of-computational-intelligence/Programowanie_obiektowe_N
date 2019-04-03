@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package po_n_lab1;
-
+package javalab1;
 import java.io.IOException;
 
 /**
- *
- * @author Notebook
+ *  http://www.iisi.pcz.pl/~rgrycuk/
+ * pass: pon
+ * @author Student
  */
-public class PO_N_Lab1 {
+public class JavaLab1 {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-
         Car car1 = new Car();
         car1.details();
         car1.setBrand("Fiat");
@@ -68,8 +62,7 @@ public class PO_N_Lab1 {
         garage4.carEnter(car4);
         garage2.details();
         garage4.details();
-        System.out.println("================== Class with list field ==========================");
-        Person.setMaxCarCount(3);
+          Person.setMaxCarCount(3);
         Person person1 = new Person();
         person1.setFirstName("Jan");
         person1.setLastName("Kowalski");
@@ -84,6 +77,7 @@ public class PO_N_Lab1 {
         person2.removeCarRegistrationNumber("DW 9866");
         person2.details();
         person2.removeCarRegistrationNumber("DW 9866");
+        System.out.println("================== Class with list field ==========================");
+//        
     }
-
 }
