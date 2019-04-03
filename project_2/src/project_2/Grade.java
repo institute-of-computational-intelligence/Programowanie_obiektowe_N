@@ -1,14 +1,13 @@
-
-package project_2;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 public class Grade {
-    
     private String subjectName;
     private Date date;
     private double value;
+
+
 
     public Grade() {
         this.subjectName = "brak";
@@ -16,12 +15,11 @@ public class Grade {
         this.value = 0.0;
     }
 
-    public Grade(String subjectName, Date date, double value) {
+    public Grade(String subjectName, double value,  Date date ) {
         this.subjectName = subjectName;
         this.date = date;
         this.value = value;
     }
-
 
     public String getSubjectName() {
         return subjectName;
@@ -47,16 +45,19 @@ public class Grade {
         this.value = value;
     }
 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     @Override
     public String toString() {
-        return "Grade{" + "subjectName=" + subjectName + ", date=" + date + ", value=" + value + '}';
+        return "Grade{" +
+                "subjectName='" + subjectName + '\'' +
+                ", date=" + sdf.format(date) +
+                ", value=" + value +
+                '}';
     }
-    
+
     public void details()
     {
-        System.out.println(this); 
+        System.out.println(this);
     }
-    
-    
-    
+
 }

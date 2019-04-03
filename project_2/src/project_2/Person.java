@@ -1,25 +1,23 @@
-
-package project_2;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+public class Person
+{
 
-public class Person {
-    
     protected String firstName;
     protected String lastName;
-    protected Date dateofBirth;
+    protected Date dateOfBirth;
 
     public Person() {
         this.firstName = "brak";
         this.lastName = "brak";
-        this.dateofBirth = new Date();       
+        this.dateOfBirth = new Date();
     }
 
-    public Person(String firstName, String lastName, Date dateofBirth) {
+    public Person(String firstName, String lastName, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateofBirth = dateofBirth;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -30,27 +28,37 @@ public class Person {
         this.firstName = firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     @Override
     public String toString() {
-        return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", dateofBirth=" + dateofBirth + '}';
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + sdf.format(dateOfBirth) +
+                '}';
     }
-    
+
+
     public void details()
     {
         System.out.println(this);
     }
 
-    public Date getDateofBirth() {
-        return dateofBirth;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDateofBirth(Date dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
-    
-    
+
+
 }
