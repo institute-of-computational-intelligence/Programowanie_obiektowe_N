@@ -3,7 +3,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 /**
- *
+ * http://www.iisi.pcz.pl/~rgrycuk/Files/PO_N_Lab2.pdf
  * @author Student
  */
 public class JavaLab2 {
