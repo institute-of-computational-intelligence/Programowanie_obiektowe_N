@@ -1,6 +1,7 @@
-package lab2;
+package lab2.LabClasses.Players;
 
 import java.util.Date;
+import lab2.LabClasses.Person;
 
 public abstract class Player extends Person {
     protected String position;
@@ -8,7 +9,6 @@ public abstract class Player extends Person {
     protected int scoredGoals;
 
     public Player() {}
-
     public Player(String firstName, String lastName, Date dateOfBirth, String position, String club, int scoredGoals) {
         super(firstName, lastName, dateOfBirth);
         this.position = position;
@@ -19,30 +19,25 @@ public abstract class Player extends Person {
     public String getPosition() {
         return position;
     }
-
     public void setPosition(String position) {
         this.position = position;
     }
-
     public String getClub() {
         return club;
     }
-
     public void setClub(String club) {
         this.club = club;
     }
-
     public int getScoredGoals() {
         return scoredGoals;
     }
-
     public void setScoredGoals(int scoredGoals) {
         this.scoredGoals = scoredGoals;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "position=" + position + ", club=" + club + ", scoredGoals=" + scoredGoals + '}';
+        return super.toString() + " Position: " + position + ", ScoredGoals: " + scoredGoals + ", Club: " + club;
     }
     
     public void details(){
@@ -50,7 +45,7 @@ public abstract class Player extends Person {
     }
     
     public void ScoreGoal(){
-        System.out.println("Player scored a goal!!! What an awesome player xD");
+        System.out.println("Player scored a goal.");
     }
     
     

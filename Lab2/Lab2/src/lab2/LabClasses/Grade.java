@@ -1,6 +1,7 @@
-package lab2;
+package lab2.LabClasses;
 
 import java.util.Date;
+import lab2.MyUtilities;
 
 public class Grade implements Cloneable {
     private String subjectName;
@@ -18,30 +19,25 @@ public class Grade implements Cloneable {
     public String getSubjectName() {
         return subjectName;
     }
-
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
     }
-
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
-
     public double getValue() {
         return value;
     }
-
     public void setValue(double value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "Grade{" + "subjectName=" + subjectName + ", date=" + date + ", value=" + value + '}';
+        return "Grade: " + value + ", Subject: " + subjectName + ", Date: " + MyUtilities.DateFormatter.FormatDate("yyyy-MM-dd", date);
     }
     
     public void details(){

@@ -1,4 +1,4 @@
-package lab2;
+package lab2.LabClasses.Players;
 
 import java.util.Date;
 
@@ -8,7 +8,8 @@ public class HandballPlayer extends Player {
         super(firstName, lastName, dateOfBirth, position, club, scoredGoals);
     }
     
+    @Override
     public void ScoreGoal(){
-                System.out.println("Handball Player scored a goal! yaaay!");
+                System.out.println("Handball Player scored a goal.");
     }
 }

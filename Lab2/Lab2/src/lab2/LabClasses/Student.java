@@ -1,8 +1,9 @@
-package lab2;
+package lab2.LabClasses;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 import static java.util.stream.Collectors.toList;
 
 // TODO:
@@ -17,7 +18,6 @@ public class Student extends Person {
     private List<Grade> grades;
 
     public Student() { grades = new ArrayList<Grade>(); }
-
     public Student(String firstName, String lastName, Date dateOfBirth, int year, int group, int indexid) {
         super(firstName, lastName, dateOfBirth);
         this.year = year;
@@ -29,27 +29,21 @@ public class Student extends Person {
     public int getYear() {
         return year;
     }
-
     public void setYear(int year) {
         this.year = year;
     }
-
     public int getGroup() {
         return group;
     }
-
     public void setGroup(int group) {
         this.group = group;
     }
-
     public int getIndexid() {
         return indexid;
     }
-
     public void setIndexid(int indexid) {
         this.indexid = indexid;
     }
-
     public List<Grade> getGrades() {
         return grades;
     }
@@ -61,11 +55,17 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student: " + super.firstName + " " + super.lastName + " " + super.dateOfBirth.getYear()+"."+super.dateOfBirth.getMonth()+"."+super.dateOfBirth.getDay()
-                +"{" + "year=" + year + ", group=" + group + ", indexid=" + indexid + ", grades=" + grades + '}';
+        String basic = super.toString() + " Year: " + year + ", group: " + group + ", indexId=" + indexid + "\n Grades:";
+        StringBuilder strBuild = new StringBuilder(basic);  
+        strBuild.ensureCapacity(32);
+        if(grades.size() > 0)
+        {
+            for(Grade grade: grades){
+                strBuild.append(grade).append("\n");
+            }
+        }
+        return strBuild.toString();
     }
-
-    
 
     public void addGrade(String subjectName, double value, Date date) throws CloneNotSupportedException{
         Grade grade = new Grade(subjectName, value, date);
@@ -91,6 +91,10 @@ public class Student extends Person {
         }
     }
     
+    private void noGradeMessage(){
+        System.out.println("There is no such grade");
+    }
+    
     public void deleteGrade(String subjectName, double value, Date date){
         for(Grade grade: grades)
         {
@@ -98,21 +102,29 @@ public class Student extends Person {
                     grade.getValue() == value && 
                     grade.getDate() == date){
                 grades.remove(grade);
+                return;
             }
         }
+        noGradeMessage();
     }
     
     public void deleteGrade(Grade grade){
-        List<Grade> filteredGrades = grades.stream()
-                .filter(t -> 
-                        (t.getSubjectName() == null ? grade.getSubjectName() == null : t.getSubjectName().equals(grade.getSubjectName()))
+        try
+        {
+            Grade filteredGrade = grades.stream()
+            .filter(t -> 
+                    (t.getSubjectName() == null ? grade.getSubjectName() == null : t.getSubjectName().equals(grade.getSubjectName()))
                         && t.getValue() == grade.getValue() 
                         && t.getDate() == grade.getDate())
-                .collect(toList());
-        
-        for(Grade gradeToRemove: filteredGrades)
-        {
-            grades.remove(grade);
+            .findFirst()
+            .get();
+            if(filteredGrade != null)
+            {
+                grades.remove(grade);
+            }
+        }
+        catch(NoSuchElementException e){
+            noGradeMessage();
         }
     }
  
