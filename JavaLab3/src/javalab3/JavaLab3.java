@@ -1,5 +1,8 @@
 package javalab3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * http://www.iisi.pcz.pl/~rgrycuk/Files/PO_N_Lab3.pdf
  * @author PC
@@ -13,7 +16,7 @@ public class JavaLab3 {
         Application application = new Application(oracleConnection); // injection of oracle connection
         //new Application(sqlServerConnection); // injection of sqlserver connection
         application.GetData();
-        System.out.println("============================================");
+        System.out.println("============================================"); 
         System.err.println("");
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Syrena", "105", 2, 0.8f, 7.6d, "WE1234"));
@@ -33,5 +36,6 @@ public class JavaLab3 {
         building.createAparment(ap2);
         building.createAparment(ap3);
         building.details();
+
     }
 }

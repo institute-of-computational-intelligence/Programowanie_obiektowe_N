@@ -7,17 +7,17 @@ package javalab3;
 public class OracleDbConnection implements DbConnection{
     
     @Override
-    public void Open(){
-    
+    public void Open() {
+        System.out.println("Connection open");
     }
-    
+
     @Override
-    public void Close(){
-    
+    public void Close() {
+         System.out.println("Connection close");
     }
-    
+
     @Override
-    public void ExecuteSQL(String sql){
-    
+    public void ExecuteSQL(String sql) {
+        System.out.println("Execute SQL: " + sql);
     }
 }
