@@ -14,27 +14,21 @@ public class Garage {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
-
     public int getCapacity() {
         return capacity;
     }
-
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-
     public Car[] getCars() {
         return cars;
     }
-    
     public int carsCount(){
         return cars.length;
     }
-    
     public void carEnter(Car car) throws CloneNotSupportedException {
         Car tmpCar[];
         if(cars != null)
@@ -51,7 +45,6 @@ public class Garage {
         cars[cars.length - 1] = car;
 
     }
-    
     public void details(){
         System.out.println("Capacity: " + capacity);
         System.out.println("Cars in the garage:");
