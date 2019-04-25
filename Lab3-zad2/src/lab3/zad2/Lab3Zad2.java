@@ -26,5 +26,4 @@ public class Lab3Zad2 {
         building.createApartment(ap3);
         building.details();
     }
-    
 }
