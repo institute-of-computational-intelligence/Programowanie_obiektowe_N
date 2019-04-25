@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Lab1 {
 
-    public static void main(String[] args) throws IOException, CloneNotSupportedException {
+    public static void main(String[] args) throws IOException, CloneNotSupportedException, Exception {
         Car car1 = new Car();
         car1.details();
         car1.setBrand("Fiat");
@@ -46,10 +46,10 @@ public class Lab1 {
         garage2.carEnter(car1); 
         garage2.carEnter(car2); 
         garage2.details(); 
-//        Car movedCar = garage1.carLeave(); 
-//        garage2.carEnter(movedCar); 
-//        String address = garage2.getAddress(); 
-//        Car[] cars = garage2.getCars(); 
-//        garage1.details(); garage2.details();
+        Car movedCar = garage1.carLeave(); 
+        garage2.carEnter(movedCar); 
+        String address = garage2.getAddress(); 
+        Car[] cars = garage2.getCars(); 
+        garage1.details(); garage2.details();
     }
 }
