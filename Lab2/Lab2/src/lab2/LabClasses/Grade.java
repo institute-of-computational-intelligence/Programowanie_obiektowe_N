@@ -8,7 +8,7 @@ public class Grade implements Cloneable {
     private Date date;
     private double value;
 
-    public Grade() {}
+    public Grade() { }
 
     public Grade(String subjectName, double value ,Date date) {
         this.subjectName = subjectName;

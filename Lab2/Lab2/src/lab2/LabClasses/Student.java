@@ -6,11 +6,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import static java.util.stream.Collectors.toList;
 
-// TODO:
-// addGrade - datetime.NOW
-// removeGrade - null Check
-// details() - reformat
-
 public class Student extends Person {
     private int year;
     private int group;
