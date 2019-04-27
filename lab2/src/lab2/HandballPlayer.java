@@ -5,10 +5,15 @@
  */
 package lab2;
 
+import java.util.Date;
+
 /**
  *
  * @author Student
  */
-public class HandballPlayer {
+public class HandballPlayer extends Player {
+
+    public HandballPlayer(String piotr, String kos, Date parse, String striker, String fc_Politechnika, int i) {
+    }
     
 }
