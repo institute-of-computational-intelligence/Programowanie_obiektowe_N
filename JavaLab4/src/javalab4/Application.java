@@ -8,6 +8,9 @@ public class Application {
     }
     
     public void DisplayAllProducts(){
-    
+        var foo = productRepository.Get();
+        for (var product : foo) {
+             System.out.println(product);
+        }
     }
 }

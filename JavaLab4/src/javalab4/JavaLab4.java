@@ -17,18 +17,19 @@ public class JavaLab4 {
         for (Product product : allProducts) {
              System.out.println(product);
         }
-//        System.out.println("===========================");
-//        Product newProduct = new Product("MONITOR", "HYAMA", 2999.99f);
-//        productRepository.Add(newProduct);
-//        System.out.println("Product created: " + newProduct);
-//        System.out.println("===========================");
-//        Product p1 = productRepository.Get(3);
-//        System.out.println();
-//        System.out.println(p1);
-//        p1.setPrice(21500);
-//        productRepository.Update(p1, 2);
-//        System.out.println("Product updated: " + p1);
-//        productRepository.Delete(2);
-//        System.out.println("Product deleted");
+        System.out.println("===========================");
+        
+        Product newProduct = new Product("MONITOR", "HYAMA", 2999.99f);
+        productRepository.Add(newProduct);
+        System.out.println("Product created: " + newProduct);
+        System.out.println("===========================");
+        Product p1 = productRepository.Get(1);
+        System.out.println();
+        System.out.println(p1);
+        p1.setPrice(21500);
+        productRepository.Update(p1, 1);
+        System.out.println("Product updated: " + p1);
+        productRepository.Delete(1);
+        System.out.println("Product deleted");
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-05-11 16:25:50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Orders" table="ORDERS" schema="STUDENT_IISI_6" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="creationdate" type="date">
+            <column name="CREATIONDATE" length="7" not-null="true" />
+        </property>
+        <property name="clientfirstname" type="string">
+            <column name="CLIENTFIRSTNAME" length="50" not-null="true" />
+        </property>
+        <property name="clientlastname" type="string">
+            <column name="CLIENTLASTNAME" length="50" not-null="true" />
+        </property>
+        <property name="deliverydate" type="date">
+            <column name="DELIVERYDATE" length="7" not-null="true" />
+        </property>
+        <property name="deliverymethod" type="string">
+            <column name="DELIVERYMETHOD" length="50" not-null="true" />
+        </property>
+        <property name="deliveryaddress" type="string">
+            <column name="DELIVERYADDRESS" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
