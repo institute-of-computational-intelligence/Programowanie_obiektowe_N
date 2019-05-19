@@ -10,15 +10,23 @@ import java.util.List;
 
 public class FileLoader implements Runnable{
     private List<String> linesList;
+    private String filePath;
 
-    public FileLoader() {
-        linesList = new ArrayList<>();
-    }
-    
+    public List<String> getLinesList() {
+        return linesList;
+    } 
+
+    public void setLinesList(List<String> linesList) {
+        this.linesList = linesList;
+    }    
+    public FileLoader(String filePath, List<String> linesList) {
+        this.linesList = linesList;
+        this.filePath =filePath;
+    }    
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        loadSingleFile(filePath);
     }
     
     public void loadSingleFile(String fileName){
@@ -29,16 +37,16 @@ public class FileLoader implements Runnable{
             BufferedReader b = new BufferedReader(new FileReader(f));
             String readLine = "";
             while((readLine = b.readLine()) != null){
-                fileLinesList.add(readLine);
+                fileLinestList.add(readLine);
             }
-            this.linesList.addAll(fileLinesList);
+            this.linesList.addAll(fileLinestList);
             
         } catch(IOException e){
             e.printStackTrace();
         }
         long endtime = System.nanoTime();
         long timeElapsed = endtime - startTime;
-        System.out.println(String.format("File %s is loaded | Execution time: %s ms", fileName, timeElapses / 1000000));
+        System.out.println(String.format("File %s is loaded | Execution time: %s ms", fileName, timeElapsed / 1000000));
     }
     
 }

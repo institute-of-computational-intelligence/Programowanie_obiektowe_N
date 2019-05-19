@@ -1,14 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javalab6;
 
-/**
- *
- * @author Student
- */
-public class Sercher {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+public class Searcher {
+
+    private List<String> linesList;
+
+    public Searcher() {
+        this.linesList = Collections.synchronizedList(new ArrayList<>());
+        
+    }
+
+    public void setLinesList(List<String> linesList) {
+        this.linesList = linesList;
+    }
+
+    public List<String> getLinesList() {
+        return linesList;
+    }
+    
+    public List<String> Search(String searchValue){
+        List<String> resultLines = linesList
+                        .stream()
+                        .filter(line -> line.contains(searchValue))
+                        .collect(Collectors.toList());
+        return resultLines;
+    }
     
 }
