@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-04-28 23:44:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Products" table="PRODUCTS" schema="STUDENT_IISI_TEST" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="orders" class="entities.Orders" fetch="select">
+            <column name="ORDERID" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="type" type="string">
+            <column name="TYPE" length="50" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="price" type="big_decimal">
+            <column name="PRICE" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

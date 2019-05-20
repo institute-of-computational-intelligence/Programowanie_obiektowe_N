@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-04-28 23:44:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Orders" table="ORDERS" schema="STUDENT_IISI_TEST" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="creationdate" type="date">
+            <column name="CREATIONDATE" length="7" not-null="true" />
+        </property>
+        <property name="clientfirstname" type="string">
+            <column name="CLIENTFIRSTNAME" length="50" not-null="true" />
+        </property>
+        <property name="clientlastname" type="string">
+            <column name="CLIENTLASTNAME" length="50" not-null="true" />
+        </property>
+        <property name="deliverydate" type="date">
+            <column name="DELIVERYDATE" length="7" not-null="true" />
+        </property>
+        <property name="deliverymethod" type="string">
+            <column name="DELIVERYMETHOD" length="100" not-null="true" />
+        </property>
+        <property name="deliveryaddress" type="string">
+            <column name="DELIVERYADDRESS" length="300" not-null="true" />
+        </property>
+        <set name="productses" table="PRODUCTS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORDERID" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="entities.Products" />
+        </set>
+    </class>
+</hibernate-mapping>
